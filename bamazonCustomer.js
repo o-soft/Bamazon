@@ -6,7 +6,7 @@ var connection = mysql.createConnection({
 		port: 3306,
 		user: 'root',
 		password: '',
-		database: 'bamazonDB',
+		database: 'bamazon_db',
 });
 
 connection.connect(function(err) {
@@ -18,7 +18,7 @@ connection.connect(function(err) {
 var commence = function() {
 		connection.query('SELECT * FROM bamazonProducts', function(err, res) {
 				for (var i=0; i<res.length; i++) {
-						if (res[i] != 0) {
+						if (res[i].stock_quantity > 0) {
 							console.log('ID: ' + res[i].item_id + ' | ' + 'Product: ' + res[i].product_name + ' | ' + 'Price: ' + '$' + res[i].price);
 						}
 
@@ -29,19 +29,17 @@ var commence = function() {
 };
 
 
-var shopProduct = function(res) {
-		inquirer.promt([{
-				name: 'product_id',
-				type: 'input',
-				message: 'What product would you like to purchase?',
-				required: true
-		},{
-				name: 'product_quantity',
-				type: 'input',
-				message: 'What is your desired product quantity that you would like to purchase?',
-				required: true
-		}]).then(function(answer) {
-				console.log(answer);
-		})
+// var shopProduct = function(res) {
+// 		inquirer.promt([{
+// 				name: 'product_id',
+// 				type: 'input',
+// 				message: 'What product would you like to purchase?',
+// 				required: true
+// 		},{
+// 				name: 'product_quantity',
+// 				type: 'input',
+// 				message: 'What is your desired product quantity that you would like to purchase?',
+// 				required: true
+// 		}]).
 		    
-};
+// }

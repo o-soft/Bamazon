@@ -1,7 +1,7 @@
 
-CREATE database bamazonDB;
+CREATE database bamazon_db;
 
-USE bamazonDB;
+USE bamazon_db;
 
 CREATE TABLE bamazonProducts (
 	'item_id' INT auto_increment NOT NULL,

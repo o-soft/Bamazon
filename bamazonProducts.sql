@@ -9,6 +9,7 @@ CREATE TABLE bamazonProducts (
 'department_name' VARCHAR(100) NOT NULL,
 'price' DECIMAL(10,4) NOT NULL,
 'stock_quantity' INT NULL,
+'product_sales' DECIMAL(10,2) NOT NULL DEFAULT 0,
 PRIMARY KEY (item_id)
 );
 

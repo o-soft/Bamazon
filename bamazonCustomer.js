@@ -31,7 +31,7 @@ var commence = function() {
 
 
 var shopProduct = function() {
-		promt.get([{
+		prompt.get([{
 				name: 'product_id',
 				type: 'input',
 				message: 'Type in the product_id of the product that you would like to purchase',
